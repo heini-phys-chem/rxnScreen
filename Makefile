@@ -9,11 +9,11 @@ LINKER_FLAGS = -lopenbabel
 
 all: main
 
-main: rxnScreen.cpp 
-	$(CXX) $(INCLUDE) $(LIBS) $(CXX_FLAGS) rxnScreen.cpp -o main $(LINKER_FLAGS)
+main: src/rxnScreen.cpp 
+	$(CXX) $(INCLUDE) $(LIBS) $(CXX_FLAGS) src/rxnScreen.cpp -o main $(LINKER_FLAGS)
 
-#main.o: main.o src/func.hpp src/utils.cpp
-#	$(CXX) $(INCLUDE) $(LIBS) $(CXX_FLAGS) -c src/exchangeFG.cpp $(LINKER_FLAGS
+main.o: main.o src/func.hpp src/utils.hpp
+	$(CXX) $(INCLUDE) $(LIBS) $(CXX_FLAGS) -c src/rxnScreen.cpp $(LINKER_FLAGS)
 
 clean:
 	rm -rf main
@@ -21,4 +21,4 @@ clean:
 	rm -rf test.xyz
 
 clean_xyz:
-	rm -rf test*
+	rm -rf test_*
